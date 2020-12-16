@@ -6,15 +6,9 @@ x, counter, steps_per_day, dates = 0, 0, [0], [0]
 for y in df['date']:
     if y != dates[-1]:
         dates.append(y)
-        if str(y) == "nan":
-            pass
-        else:
-            steps_per_day.append(df['steps'][counter])
+        steps_per_day.append(df['steps'][counter])
     else:
-        if str(y) == "nan":
-            pass
-        else:
-            steps_per_day[-1] += df['steps'][counter]
+        steps_per_day[-1] += df['steps'][counter]
     counter += 1
 steps_per_day.pop(0)
 dates.pop(0)
